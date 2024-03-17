@@ -1,0 +1,38 @@
+<!-- <% for(var i = 0; i < users.length; i++) { %>
+    <tr>
+        <td><%= users[i].firstname %> <%= users[i].lastname %></td>
+        <td><%= users[i].email %></td>
+        <td><%= users[i].phone %></td>
+        <td>
+            <a class="btn border-shadow update" data-id=<%= users[i]._id%>>
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn border-shadow delete" data-id=<%= users[i]._id%> >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+            <button type="button" class="block-btn block" data-id="<%= users[i]._id %>" data-status="<%= users[i].block %>">
+                <%= users[i].block ? 'Unblocked' : 'Blocked' %>
+            </button>
+
+        </td>
+    </tr>
+    <% } %> -->
+
+    <% for(var i = 0; i < users.length; i++) { %>
+        <tr>
+            <td><%= users[i].firstname %> <%= users[i].lastname %></td>
+            <td><%= users[i].email %></td>
+            <td><%= users[i].phone %></td>
+            <td>
+                <a href="/update-user?id=<%= users[i]._id%>" class="btn border-shadow update">
+                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                </a>
+                <a class="btn border-shadow delete" data-id=<%= users[i]._id%> >
+                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                </a>
+                <button type="button" class="block-btn block" data-id="<%= users[i]._id %>" data-status="<%= users[i].block %>">
+                    <%= users[i].block ? 'Unblocked' : 'Blocked' %>
+                </button>
+            </td>
+        </tr>
+        <% } %>
